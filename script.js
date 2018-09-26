@@ -3,12 +3,10 @@ $(document).ready(function () {
     var backFunc = function(){
         $('#wrapper').css('background-image', "url("+$(this).attr('data-alt-src')+")")
     };
-    // var playerTurn=[];
-    var turn = true;
 
+    var turn = true;
     $('button').hover(backFunc,function(){
         $('#wrapper').css('background-image', 'none');
-        console.log("we are off the button");
          }
         );
     $('button').click(function(){
@@ -17,17 +15,13 @@ $(document).ready(function () {
         $('h2').text('Select Characters');
     })
     $(document).on('click', 'button', function() {
-        //$('.player2').css("border","none");
-        //$('.player1').html("<img class ='downarrow' src='img/triangle.png' />");
         $('img').click(function(){
             if(turn){
                 $('.player1').html('<img src='+$(this).attr('data-alt-src')+' />');
-               // $('.player1').css("border","none");
                 $('.player2 img').before("<img class ='downarrow' src='img/triangle.png' />");
                 turn = false;
             }else{
                 $('.player2').html('<img src='+$(this).attr('data-alt-src')+' />');
-                //$('.player2').css("border","none");
                 $('.player1 img').before("<img class ='downarrow' src='img/triangle.png' />");
                 turn = true;
             }
@@ -36,16 +30,5 @@ $(document).ready(function () {
         
     }
       );
-
-
-
-    // $('.ninja').click(function(){
-    //     $( this ).fadeOut("slow");
-    // });
-    // $('button').click(function(){
-    //     $('.ninja').fadeIn("slow");
-
-    // });
-
 
 });
